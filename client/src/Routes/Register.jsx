@@ -1,8 +1,14 @@
+import Form from '../components/Form';
+
+
 const Register = () => {
   return (
-    <div>
-      REGISTER
-    </div>
+    <>
+      <div>
+        REGISTER
+      </div>
+      <Form />
+    </>
   );
 }
 
