@@ -1,23 +1,21 @@
 import { useState } from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
-import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import '../styles/components/_form.scss';
 
-const Form = () => {
+const Form = (props) => {
   const [values, setValues] = useState({
-    amount: '',
+    email: '',
     password: '',
-    weight: '',
-    weightRange: '',
     showPassword: false,
   });
+
+  const btnText = props.title === 'Register' ? 'Start coding now' : 'Login';
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
@@ -35,15 +33,13 @@ const Form = () => {
   };
 
   return (
-    <div className="form">
+    <div className="form-container">
       <p>Logo</p>
       {/* header will change */}
       <h5>Join thousands of learners from around the world</h5>
       {/* no display for login*/}
-      <p>Master web development by making real-lifr projects. There are paths for you to choose</p>
-      <Box
-        className='inputGroup'
-        autoComplete='off'>
+      <p className='intro'>Master web development by making real-lifr projects. There are paths for you to choose</p>
+      <div className="inputs">
         <TextField
           id='email'
           label='Email'
@@ -53,7 +49,7 @@ const Form = () => {
           onChange={handleChange('email')}
         />
         <FormControl variant='outlined'>
-          <InputLabel htmlFor='password'>Password</InputLabel>
+          {/* <InputLabel htmlFor='password'>Password</InputLabel> */}
           <OutlinedInput
             id='password'
             required
@@ -61,6 +57,7 @@ const Form = () => {
             value={values.password}
             onChange={handleChange('password')}
             label='Password'
+            placeholder='Password'
             startAdornment={
               <InputAdornment position='start'>
                 <IconButton
@@ -75,8 +72,8 @@ const Form = () => {
             }
           />
         </FormControl>
-        <Button variant='contained'>Do something</Button>
-      </Box>
+      </div>
+      <button className='btn-primary'>{btnText}</button>
     </div>
   );
 }

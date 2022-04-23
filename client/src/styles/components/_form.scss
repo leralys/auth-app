@@ -1,0 +1,35 @@
+.form-container {
+  border: 1px solid var(--dark);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  width: 474px;
+  height: 634px;
+  padding: 58px;
+
+  h5,
+  .intro {
+    width: 319px;
+    line-height: 1.4;
+  }
+
+  h5 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .intro {
+    line-height: 1.4;
+  }
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    height: 110px;
+    justify-content: space-between;
+
+    input {
+      padding: 12.5px 16px;
+    }
+  }
+}

@@ -1,14 +1,12 @@
 import Form from '../components/Form';
 
 
-const Register = () => {
+const Register = ({ title }) => {
+  const props = {
+    title
+  }
   return (
-    <>
-      <div>
-        REGISTER
-      </div>
-      <Form />
-    </>
+    <Form {...props} />
   );
 }
 
