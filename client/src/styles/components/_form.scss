@@ -7,29 +7,24 @@
   height: 634px;
   padding: 58px;
 
+  .logo {
+    margin-bottom: 28px;
+  }
+
   h5,
   .intro {
-    width: 319px;
-    line-height: 1.4;
+    line-height: 22px;
+    white-space: nowrap;
   }
 
   h5 {
     font-size: 18px;
     font-weight: 600;
+    margin-bottom: 14.5px;
   }
 
   .intro {
-    line-height: 1.4;
-  }
-
-  .inputs {
-    display: flex;
-    flex-direction: column;
-    height: 110px;
-    justify-content: space-between;
-
-    input {
-      padding: 12.5px 16px;
-    }
+    font-weight: 400;
+    width: 320px;
   }
 }
